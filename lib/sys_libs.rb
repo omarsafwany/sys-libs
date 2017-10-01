@@ -31,5 +31,13 @@ module SysLibs
       end
     )
     
-    
+    response = RestClient.post "http://localhost:3000/packages/search", 
+                        { :packages => @packagesArray, :os => @os }
+    body = JSON.parse(response.body)
+    body.each do |key, value|
+        puts key["name"] + " needs the following sys libs to be installed:"
+        key["dependencies"].each do |d|
+            puts d["name"]
+        end
+    end
 end
