@@ -34,7 +34,7 @@ module SysLibs
     )
     
     #Send a post request to the server to retrieve the required sys libs
-    response = RestClient.post "http://localhost:3000/packages/search", 
+    response = RestClient.post "https://stormy-bayou-25992.herokuapp.com/packages/search", 
                         { :packages => @packagesArray, :os => @os }
     body = JSON.parse(response.body)
     body.each do |key, value|
