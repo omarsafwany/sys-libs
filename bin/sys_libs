@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require "sys_libs"
+s = SysLibs
