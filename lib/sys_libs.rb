@@ -1,4 +1,5 @@
 require "sys_libs/version"
+require "rest-client"
 
 module SysLibs
     #Read the project's Gemfile, fetch all uncommented gems and add to array
