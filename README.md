@@ -22,7 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ bundle exec sys_libs
+
+The gem will now collect all project's gems, send them to the server and retrieve the list of required system libraries for each gem.
 
 ## Development
 
