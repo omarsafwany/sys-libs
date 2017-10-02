@@ -1,8 +1,6 @@
 # SysLibs
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sys_libs`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+SysLibs is a gem that collects all project's gems and retrieves the required system libraries for each in order to work. Thsi would prevent getting stuck with unknown errors when installing gems since we would now know the missing ones in advance. 
 
 ## Installation
 
