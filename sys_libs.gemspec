@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
     f.match(%r{^(test|spec|features)/})
   end
   spec.bindir        = "exe"
-  spec.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  spec.executables   = "bin/sys_libs"
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rest-client"
