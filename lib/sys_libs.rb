@@ -1,5 +1,6 @@
 require "sys_libs/version"
 require "rest-client"
+require "json"
 
 module SysLibs
     class Task
