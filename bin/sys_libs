@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "sys_libs"
-i = SysLibs.::Task.new
+i = SysLibs::Task.new
 packages = i.getPackages
 os = i.getOS
 i.getMissingLins(packages, os)
