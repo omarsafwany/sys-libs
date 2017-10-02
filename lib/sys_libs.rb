@@ -1,5 +1,4 @@
 require "sys_libs/version"
-require "unirest"
 
 module SysLibs
     #Read the project's Gemfile, fetch all uncommented gems and add to array
