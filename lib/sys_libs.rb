@@ -1,7 +1,8 @@
-#require "sys_libs/version"
+require "sys_libs/version"
 require "unirest"
 
 module SysLibs
+    #Read the project's Gemfile, fetch all uncommented gems and add to array
     @packagesArray = []
     f = File.open("Gemfile", "r")
     f.each_line do |line|
@@ -15,6 +16,7 @@ module SysLibs
     end
     f.close
     
+    #Get the current os
     @os ||= (
       host_os = RbConfig::CONFIG['host_os']
       case host_os
@@ -31,6 +33,7 @@ module SysLibs
       end
     )
     
+    #Send a post request to the server to retrieve the required sys libs
     response = RestClient.post "http://localhost:3000/packages/search", 
                         { :packages => @packagesArray, :os => @os }
     body = JSON.parse(response.body)
