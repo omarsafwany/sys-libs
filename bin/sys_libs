@@ -4,4 +4,4 @@ require "sys_libs"
 i = SysLibs::Task.new
 packages = i.getPackages
 os = i.getOS
-i.getMissingLins(packages, os)
+i.getMissingLibs(packages, os)
