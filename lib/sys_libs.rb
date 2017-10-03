@@ -50,19 +50,21 @@ module SysLibs
                 key["dependencies"].each do |d|
                     puts d["name"]
                 end
-                puts "Trying to download the required libs..."
-                key["dependencies"].each do |d|
-                    case key["os"]
-                        when "mac"
-                        system("brew install "+ d["name"])
-                        when "linux"
-                        system("apt-get install "+ d["name"])
-                        when "unix"
-                        system("apt-get install "+ d["name"])
-                        else
-                        puts "It is recommended you download those libs before proceeding."
-                    end
-                end
+                #This is the bonus part regarding installing the missing libs
+                #It was not tested as I had technical issues with my machine so I just commented it
+#                puts "Trying to download the required libs..."
+#                key["dependencies"].each do |d|
+#                    case key["os"]
+#                        when "mac"
+#                        system("brew install "+ d["name"])
+#                        when "linux"
+#                        system("apt-get install "+ d["name"])
+#                        when "unix"
+#                        system("apt-get install "+ d["name"])
+#                        else
+#                        puts "It is recommended you download those libs before proceeding."
+#                    end
+#                end
             end
         end
     end
