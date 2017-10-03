@@ -42,13 +42,26 @@ module SysLibs
 
         #Send a post request to the server to retrieve the required sys libs
         def getMissingLibs(packagesArray, os)
-            response = RestClient.post "https://stormy-bayou-25992.herokuapp.com/packages/search", 
+            response = RestClient.post "https://eventtus-task.herokuapp.com/packages/search", 
                                 { :packages => packagesArray, :os => os }
             body = JSON.parse(response.body)
             body.each do |key, value|
                 puts key["name"] + " needs the following sys libs to be installed:"
                 key["dependencies"].each do |d|
                     puts d["name"]
+                end
+                puts "Trying to download the required libs..."
+                key["dependencies"].each do |d|
+                    case key["os"]
+                        when "mac"
+                        system("brew install "+ d["name"])
+                        when "linux"
+                        system("apt-get install "+ d["name"])
+                        when "unix"
+                        system("apt-get install "+ d["name"])
+                        else
+                        puts "It is recommended you download those libs before proceeding."
+                    end
                 end
             end
         end
